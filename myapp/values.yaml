@@ -1,0 +1,17 @@
+namespace: staging
+
+app:
+  name: postgres 
+  replicas: 1
+  image: postgres:16-alpine
+  secretName: postgres-secret
+
+  request:
+    memory: 64Mi
+    cpu: 50m
+  
+  limits:
+    memory: 250Mi 
+
+  volumeClaimTemplates:
+    storage: 1Gi

@@ -1,0 +1,17 @@
+namespace: prod
+
+app:
+  name: postgres-prod
+  replicas: 1
+  image: postgres:16-alpine
+  secretName: postgres-secret-prod
+
+  request:
+    memory: 100Mi
+    cpu: 100m
+  
+  limits:
+    memory: 500Mi 
+
+  volumeClaimTemplates:
+    storage: 1Gi
